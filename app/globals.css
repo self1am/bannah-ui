@@ -48,3 +48,8 @@ body {
   color: var(--charcoal);
   /* font-family: Arial, Helvetica, sans-serif; */
 }
+
+::selection {
+  background: var(--amber);
+  color: var(--cream);
+}

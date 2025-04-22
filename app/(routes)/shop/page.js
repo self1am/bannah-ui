@@ -328,10 +328,10 @@ const ShopFilters = ({
           <div className="space-y-4">
             <div className="flex justify-between items-center">
               <span className="text-sm text-midnight/70">
-                ${activeFilters.priceRange.min}
+                AED {activeFilters.priceRange.min}
               </span>
               <span className="text-sm text-midnight/70">
-                ${activeFilters.priceRange.max}
+                AED {activeFilters.priceRange.max}
               </span>
             </div>
 
@@ -470,7 +470,7 @@ const PerfumeGrid = ({ perfumes }) => {
         <Link
           href={`/perfumes/${perfume.slug}`}
           key={perfume.id}
-          className="group"
+          className="group cursor-pointer"
         >
           <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
             {/* Product Image */}

@@ -21,7 +21,7 @@ const PerfumeCard = ({ perfume }) => {
         <p className="text-sm text-slate font-poppins mt-1">{perfume.notes.join(", ")}</p>
         <div className="mt-2 text-amber font-semibold">AED {perfume.price}</div>
         <Link
-          href={`/perfumes/${perfume.id}`}
+          href={`/perfumes/${perfume.slug}`}
           className="block mt-3 text-sm text-midnight hover:text-amber font-montserrat"
         >
           View Details →

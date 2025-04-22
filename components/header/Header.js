@@ -4,13 +4,29 @@ import Link from "next/link";
 import { Search, ShoppingBag, User, Heart, Bell, Menu, X } from "lucide-react";
 import HeaderTop from "./HeaderTop";
 
+const useWindowWidth = () => {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const updateWidth = () => setWidth(window.innerWidth);
+    updateWidth(); // set initially
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  return width;
+};
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const width = useWindowWidth();
+
+  const isDesktop = width >= 768;
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -24,11 +40,17 @@ const Header = () => {
     <div className="relative z-50 border-collapse">
       <HeaderTop />
       <header
-        className={`w-full fixed z-50 transition-all duration-300 bg-cream ${isScrolled ? `border-b border-amber shadow-md` : ""}`}
-        style={{
-          top: isScrolled ? "0px" : "40px", // start slightly pushed down
-          transition: "top 0.3s ease-in-out",
-        }}
+        className={`w-full fixed z-50 transition-all duration-300 bg-cream ${
+          isScrolled ? `border-b border-amber shadow-md` : ""
+        }`}
+        style={
+          isDesktop
+            ? {
+                top: isScrolled ? "0px" : "35px",
+                transition: "top 0.2s ease-in-out",
+              }
+            : { top: "0px" }
+        }
       >
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">

@@ -1,204 +1,146 @@
-// HeroSection.jsx
 "use client";
-import React, { useState, useEffect } from "react";
+
+import React from "react";
+import Typewriter from "@/components/typewriter";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-const HeroSection = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const totalSlides = 3;
-
-  // Auto-rotate slides
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % totalSlides);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const handleDotClick = (index) => {
-    setActiveSlide(index);
-  };
-
-  // Hero slide content
-  const heroSlides = [
-    {
-      heading: "Discover Your Signature Scent",
-      subheading:
-        "Personalized fragrance recommendations tailored to your preferences",
-      cta: "Take the Quiz",
-      ctaLink: "/quiz",
-      image: "/images/hero-1.jpg",
-      altText: "Elegant perfume bottles on a golden background",
-      bgColor: "bg-midnight",
-      accentColor: "bg-amber",
-    },
-    {
-      heading: "Try Before You Buy",
-      subheading:
-        "Sample premium fragrances monthly with our curated subscription box",
-      cta: "Subscribe Now",
-      ctaLink: "/subscription",
-      image: "/images/hero-2.jpg",
-      altText: "Subscription box with perfume samples",
-      bgColor: "bg-stone-900",
-      accentColor: "bg-amber-light",
-    },
-    {
-      heading: "Explore Exclusive Collections",
-      subheading: "Discover niche and luxury fragrances from around the world",
-      cta: "Shop Collection",
-      ctaLink: "/shop",
-      image: "/images/hero-3.jpg",
-      altText: "Collection of luxury perfume bottles",
-      bgColor: "bg-slate-900",
-      accentColor: "bg-cream/30",
-    },
-  ];
-
+const FragranceHero = () => {
+  const texts = ["Signature Scent", "Perfect Match", "Fragrance Story"];
   return (
-    <section
-      className={`relative h-[50vh] min-h-[600px] w-full overflow-hidden transition-colors duration-1000 ${heroSlides[activeSlide].bgColor}`}
-    >
-      {/* Background accent elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-        <div
-          className={`absolute -top-32 -right-32 w-64 h-64 rounded-full blur-3xl opacity-20 ${heroSlides[activeSlide].accentColor} transition-all duration-1000`}
-        ></div>
-        <div
-          className={`absolute top-1/2 -left-16 w-48 h-48 rounded-full blur-3xl opacity-10 ${heroSlides[activeSlide].accentColor} transition-all duration-1000`}
-        ></div>
+    <div className="relative w-full max-h-[600px] min-h-[600px] bg-midnight">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-charcoal/90 z-10"></div>
+
+      {/* Background image with subtle opacity */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero-1.jpg"
+          alt="Luxury fragrance collection"
+          fill
+          priority
+          quality={90}
+          className="object-cover opacity-40"
+        />
       </div>
 
-      {/* Main content container */}
-      <div className="container mx-auto h-full flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-3/4 relative z-10">
-          {/* Text content - left side */}
-          <div className="flex items-center px-4 lg:px-8">
-            <div className="relative overflow-hidden">
-              {heroSlides.map((slide, index) => (
-                <div
-                  key={index}
-                  className={`transition-all duration-1000 ${
-                    activeSlide === index
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-8 absolute inset-0"
-                  }`}
-                >
-                  <div className="max-w-xl">
-                    <h1 className="font-playfair text-4xl md:text-5xl text-cream mb-4 leading-tight">
-                      {slide.heading}
-                    </h1>
-                    <p className="font-poppins text-lg text-cream opacity-90 mb-8 max-w-md">
-                      {slide.subheading}
-                    </p>
-                    <div className="flex flex-wrap gap-4">
-                      <Link
-                        href={slide.ctaLink}
-                        className="bg-amber hover:bg-amber-light text-midnight font-montserrat text-sm font-medium px-8 py-3 rounded-md transition-colors duration-200 flex items-center"
-                      >
-                        {slide.cta}
-                        <ArrowRight size={16} className="ml-2" />
-                      </Link>
-                      <Link
-                        href="/shop"
-                        className="border border-cream text-cream hover:bg-cream hover:text-midnight font-montserrat text-sm font-medium px-8 py-3 rounded-md transition-colors duration-200"
-                      >
-                        Explore All
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* Decorative elements - visible only on larger screens */}
+      <div className="absolute top-0 right-0 w-1/3 h-full opacity-20 z-0 hidden md:block">
+        <div className="absolute top-20 right-20 w-64 h-64 rounded-full border border-amber opacity-20"></div>
+        <div className="absolute bottom-40 right-40 w-32 h-32 rounded-full border border-amber-light opacity-30"></div>
+        <div className="absolute top-1/3 right-1/4 w-48 h-48 rounded-full border border-cream opacity-10"></div>
+      </div>
 
-          {/* Image content - right side */}
-          <div className="hidden lg:block relative overflow-hidden rounded-l-3xl">
-            {heroSlides.map((slide, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-all duration-1000 ${
-                  activeSlide === index
-                    ? "opacity-100 scale-100"
-                    : "opacity-0 scale-105"
-                }`}
-              >
-                <div className="relative w-full h-full">
-                  <Image
-                    src={slide.image}
-                    alt={slide.altText}
-                    fill
-                    priority={index === 0}
-                    quality={90}
-                    className="object-cover"
-                  />
-                  {/* Subtle gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-midnight to-transparent opacity-20"></div>
-                </div>
-              </div>
-            ))}
+      {/* Content Container */}
+      <div className="relative h-full w-full max-w-7xl mx-auto px-4 flex flex-col justify-center md:justify-between md:flex-row items-center z-20">
+        {/* Left Content - takes full width on mobile */}
+        <div className="w-full md:w-1/2 space-y-6 pt-16 md:pt-0">
+          <p className="text-amber uppercase tracking-[0.2em] text-sm font-montserrat">
+            Luxury Fragrance Collection
+          </p>
 
-            {/* Decorative elements overlaying the image */}
-            <div className="absolute bottom-8 left-8">
-              <div className="flex items-center">
-                <div className="w-16 h-16 rounded-full border border-amber opacity-60 animate-pulse"></div>
-                <div
-                  className="w-24 h-24 rounded-full border border-amber-light opacity-30 -ml-4 animate-pulse"
-                  style={{ animationDelay: "1s" }}
-                ></div>
-              </div>
-            </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair text-cream space-y-2">
+            <span className="block">Discover Your</span>
+            <span className="block text-amber">
+              <Typewriter
+                texts={texts}
+                speed={100} // Faster typing speed
+                deleteSpeed={70} // Fast deletion
+                charsPerFrame={1} // Type 2 characters per frame
+                loop={true}
+                cursor={true}
+                delayAfterText={2000}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-title text-amber"
+              />
+            </span>
+          </h1>
+
+          <p className="font-poppins text-cream/80 text-base md:text-lg max-w-md">
+            Personalized fragrance recommendations tailored to your preferences
+            and personality. Experience the art of scent.
+          </p>
+
+          <div className="flex flex-wrap gap-4 mt-6 md:mt-8">
+            <Link
+              href="/quiz"
+              className="bg-amber hover:bg-amber-light text-midnight font-montserrat text-sm font-medium px-6 sm:px-8 py-3 rounded-md transition-colors duration-200 flex items-center"
+            >
+              Take the Quiz
+              <ArrowRight size={16} className="ml-2" />
+            </Link>
+            <Link
+              href="/shop"
+              className="border border-cream text-cream hover:bg-cream hover:text-midnight font-montserrat text-sm font-medium px-6 sm:px-8 py-3 rounded-md transition-colors duration-200"
+            >
+              Explore All
+            </Link>
           </div>
         </div>
-      </div>
 
-      {/* Mobile image (shown only on smaller screens) */}
-      <div className="lg:hidden absolute inset-0 -z-10">
-        {heroSlides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              activeSlide === index ? "opacity-30" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={slide.image}
-              alt={slide.altText}
-              fill
-              priority={index === 0}
-              quality={80}
-              className="object-cover"
-            />
+        {/* Right Side with featured product - hidden on smallest screens, adjusted for others */}
+        <div className="relative w-full md:w-1/2 h-[300px] sm:h-[350px] md:h-[500px] lg:h-[600px] mt-6 md:mt-0 sm:block">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="relative h-[80%] w-[80%] overflow-hidden rounded-lg">
+              <Image
+                src="/images/hero-2.jpg"
+                alt="Featured fragrance bottle"
+                fill
+                className="object-cover"
+                priority
+              />
+
+              {/* Subtle gradient overlay on image */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-midnight/40 to-transparent"></div>
+
+              {/* Floating accent element - reduced size on smaller screens */}
+              <div className="absolute -bottom-8 -right-8 w-24 md:w-48 h-24 md:h-48 rounded-full bg-amber/10 blur-md"></div>
+              <div className="absolute -top-8 -left-8 w-16 md:w-32 h-16 md:h-32 rounded-full bg-cream/10 blur-md"></div>
+            </div>
           </div>
-        ))}
+
+          {/* Floating caption/badge - adjusted size for mobile */}
+          <div className="absolute bottom-8 md:bottom-16 -left-2 md:-left-4 bg-midnight/80 backdrop-blur-sm p-3 md:p-4 rounded border-l-2 border-amber max-w-[200px] md:max-w-xs">
+            <p className="font-playfair italic text-amber text-xs md:text-sm">
+              Featured Collection
+            </p>
+            <p className="font-montserrat text-cream text-base md:text-lg">
+              Midnight Amber
+            </p>
+          </div>
+        </div>
+
+        {/* Mobile-only product preview */}
+        {/* <div className="sm:hidden absolute bottom-16 right-0 w-32 h-32 rounded-l-lg overflow-hidden">
+          <Image
+            src="/images/hero-2.jpg"
+            alt="Featured fragrance bottle"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-midnight/60 to-transparent"></div>
+        </div> */}
       </div>
 
-      {/* Slide indicators */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-3">
-        {heroSlides.map((_, index) => (
-          <button
-            key={index}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              activeSlide === index
-                ? "bg-amber w-8"
-                : "bg-cream opacity-60 hover:opacity-80"
-            }`}
-            onClick={() => handleDotClick(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          ></button>
-        ))}
-      </div>
-
-      {/* Decorative quote */}
-      <div className="absolute top-8 right-8 hidden lg:block">
+      {/* Decorative quote - visible only on large screens */}
+      {/* <div className="absolute top-8 right-8 hidden lg:block z-20">
         <p className="font-playfair italic text-amber-light opacity-70 text-lg">
           &quot;A fragrance is a work of art.&quot;
         </p>
-      </div>
-    </section>
+      </div> */}
+
+      {/* Navigation Arrows - adjusted size for mobile */}
+      <button className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream/10 hover:bg-cream/20 flex items-center justify-center z-30 rounded-full backdrop-blur-sm border border-cream/20">
+        <span className="sr-only">Previous</span>
+        <span className="text-cream">←</span>
+      </button>
+      <button className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream/10 hover:bg-cream/20 flex items-center justify-center z-30 rounded-full backdrop-blur-sm border border-cream/20">
+        <span className="sr-only">Next</span>
+        <span className="text-cream">→</span>
+      </button>
+    </div>
   );
 };
 
-export default HeroSection;
+export default FragranceHero;

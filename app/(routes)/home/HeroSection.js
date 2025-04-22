@@ -64,7 +64,7 @@ const FragranceHero = () => {
           <div className="flex flex-wrap gap-4 mt-6 md:mt-8">
             <Link
               href="/quiz"
-              className="bg-amber hover:bg-amber-light text-midnight font-montserrat text-sm font-medium px-6 sm:px-8 py-3 rounded-md transition-colors duration-200 flex items-center"
+              className="bg-amber hover:bg-midnight text-midnight hover:text-amber font-montserrat text-sm font-medium px-6 sm:px-8 py-3 rounded-md transition-colors duration-200 flex items-center"
             >
               Take the Quiz
               <ArrowRight size={16} className="ml-2" />

@@ -10,7 +10,7 @@ const HeaderTop = () => {
           <p className="text-xs font-poppins">
             Free shipping on all UAE orders over AED 250
           </p>
-          <div className="flex space-x-6 text-xs font-poppins">
+          <div className="flex items-center space-x-6 text-xs font-poppins">
             <Link href="/help" className="hover:text-amber-light transition-colors duration-200">
               Help & FAQs
             </Link>

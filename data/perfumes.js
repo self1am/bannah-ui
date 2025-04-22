@@ -1,0 +1,181 @@
+export const perfumes = [
+  {
+    id: 1,
+    name: "Amber Oud",
+    brand: "Bannah",
+    slug: "amber-oud",
+    notes: ["Amber", "Oud", "Rose"],
+    image: "/images/amber-oud.png",
+    price: 295,
+    description:
+      "A rich blend of deep amber and dark oud, softened with a hint of rose. Long-lasting and luxurious.",
+    rating: 4.7,
+    tags: ["warm", "evening", "unisex"],
+    mood: ["romantic", "mystic"],
+    featured: true,
+  },
+  {
+    id: 2,
+    name: "Velvet Bloom",
+    brand: "Maison Elixir",
+    slug: "velvet-bloom",
+    notes: ["Jasmine", "Vanilla", "Musk"],
+    image: "/images/VelvetBloom.jpg",
+    price: 310,
+    description:
+      "A creamy floral with bold jasmine and comforting vanilla. Smooth and captivating.",
+    rating: 4.5,
+    tags: ["romantic", "floral", "feminine"],
+    mood: ["romantic", "fresh"],
+    featured: true,
+  },
+  {
+    id: 3,
+    name: "Santal Noir",
+    brand: "Luxe Parfum",
+    slug: "santal-noir",
+    notes: ["Sandalwood", "Incense", "Cedar"],
+    image: "/images/perfume-santal.jpg",
+    price: 275,
+    description:
+      "A deep, woody fragrance with incense and creamy sandalwood. Minimalist luxury.",
+    rating: 4.8,
+    tags: ["woody", "masculine", "signature"],
+    mood: ["bold", "mystic"],
+    featured: false,
+  },
+  {
+    id: 4,
+    name: "Citrus Breeze",
+    brand: "Aqua Essence",
+    notes: ["Lemon", "Bergamot", "Mint"],
+    image: "/images/perfume-citrus.jpg",
+    price: 250,
+    description:
+      "A refreshing burst of citrus with a hint of mint. Perfect for hot summer days.",
+    rating: 4.3,
+    tags: ["fresh", "citrus", "unisex"],
+    mood: ["fresh", "calm"],
+    featured: true,
+  },
+  {
+    id: 5,
+    name: "Rose Gold",
+    brand: "Floral Luxe",
+    notes: ["Rose", "Peony", "Musk"],
+    image: "/images/perfume-rose.jpg",
+    price: 320,
+    description:
+      "A luxurious floral blend of rose and peony, with a soft musk base. Elegant and timeless.",
+    rating: 4.6,
+    tags: ["floral", "elegant", "feminine"],
+    mood: ["romantic", "luxury"],
+    featured: false,
+  },
+  {
+    id: 6,
+    name: "Ocean Mist",
+    brand: "Marine Scents",
+    notes: ["Sea Salt", "Citrus", "Jasmine"],
+    image: "/images/perfume-ocean.jpg",
+    price: 280,
+    description:
+      "A fresh aquatic fragrance with sea salt and citrus notes. Evokes the feeling of a breezy beach.",
+    rating: 4.4,
+    tags: ["fresh", "aquatic", "unisex"],
+    mood: ["fresh", "calm"],
+    featured: false,
+  },
+  {
+    id: 7,
+    name: "Midnight Amber",
+    brand: "Bannah",
+    notes: ["Amber", "Vanilla", "Sandalwood"],
+    image: "/images/perfume-midnight.jpg",
+    price: 300,
+    description:
+      "A warm and inviting fragrance with amber and vanilla, perfect for evening wear.",
+    rating: 4.9,
+    tags: ["warm", "evening", "unisex"],
+    mood: ["romantic", "mystic"],
+    featured: true,
+  },
+  {
+    id: 8,
+    name: "Spicy Oud",
+    brand: "Oud Collection",
+    notes: ["Oud", "Spices", "Leather"],
+    image: "/images/perfume-spicy.jpg",
+    price: 350,
+    description:
+      "A bold and spicy fragrance with rich oud and leather notes. Perfect for the confident wearer.",
+    rating: 4.5,
+    tags: ["spicy", "masculine", "signature"],
+    mood: ["bold", "mystic"],
+    featured: false,
+  },
+  {
+    id: 9,
+    name: "Floral Dream",
+    brand: "Gardenia",
+    notes: ["Jasmine", "Rose", "Peach"],
+    image: "/images/perfume-floral.jpg",
+    price: 290,
+    description:
+      "A dreamy floral fragrance with jasmine and rose, balanced with a hint of peach.",
+    rating: 4.6,
+    tags: ["floral", "feminine", "signature"],
+    mood: ["romantic", "fresh"],
+    featured: false,
+  },
+  {
+    id: 10,
+    name: "Cedarwood Essence",
+    brand: "Woodland Scents",
+    notes: ["Cedarwood", "Amber", "Musk"],
+    image: "/images/perfume-cedarwood.jpg",
+    price: 270,
+    description:
+      "A warm and earthy fragrance with cedarwood and amber. Perfect for everyday wear.",
+    rating: 4.4,
+    tags: ["woody", "unisex", "signature"],
+    mood: ["bold", "calm"],
+    featured: false,
+  }
+];
+export const perfumeBrands = [
+  {
+    id: 1,
+    name: "Bannah",
+    image: "/images/brand-bannah.jpg",
+  },
+  {
+    id: 2,
+    name: "Maison Elixir",
+    image: "/images/brand-maison.jpg",
+  },
+  {
+    id: 3,
+    name: "Luxe Parfum",
+    image: "/images/brand-luxe.jpg",
+  },
+  // Add more brands as needed
+];
+export const perfumeNotes = [
+  {
+    id: 1,
+    name: "Amber",
+    description: "Warm and resinous, often used in oriental fragrances.",
+  },
+  {
+    id: 2,
+    name: "Oud",
+    description: "Rich and woody, derived from agarwood.",
+  },
+  {
+    id: 3,
+    name: "Rose",
+    description: "Classic floral note, romantic and elegant.",
+  },
+  // Add more notes as needed
+];

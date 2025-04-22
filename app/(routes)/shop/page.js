@@ -223,7 +223,7 @@ const ShopFilters = ({
   };
 
   return (
-    <div className="w-full md:w-1/4 bg-white rounded-lg p-6 shadow-sm h-fit sticky top-24">
+    <div className="w-full md:w-1/4 bg-white rounded-lg p-6 shadow-sm h-fit md:sticky top-24">
       <div className="flex justify-between items-center mb-6">
         <h2 className="font-playfair text-xl text-midnight">Filters</h2>
         <button
@@ -354,10 +354,10 @@ const ShopFilters = ({
 
             <div className="grid grid-cols-2 gap-4 mt-2">
               {[
-                { label: "Under $250", value: { min: 0, max: 250 } },
-                { label: "$250 - $300", value: { min: 250, max: 300 } },
-                { label: "$300 - $350", value: { min: 300, max: 350 } },
-                { label: "$350+", value: { min: 350, max: 1000 } },
+                { label: "Under AED 250", value: { min: 0, max: 250 } },
+                { label: "AED 250 - AED 300", value: { min: 250, max: 300 } },
+                { label: "AED 300 - AED 350", value: { min: 300, max: 350 } },
+                { label: "AED 350+", value: { min: 350, max: 1000 } },
               ].map((range) => (
                 <button
                   key={range.label}
@@ -522,7 +522,7 @@ const PerfumeGrid = ({ perfumes }) => {
               {/* Price */}
               <div className="flex justify-between items-center">
                 <span className="font-montserrat font-medium text-midnight">
-                  ${perfume.price}
+                  AED {perfume.price}
                 </span>
                 <span className="text-xs text-amber group-hover:translate-x-1 transition-transform duration-300">
                   View Details →

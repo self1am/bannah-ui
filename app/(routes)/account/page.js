@@ -297,7 +297,7 @@ export default function AccountPage() {
                         No orders yet
                       </h3>
                       <p className="text-midnight/60 text-sm">
-                        You haven't placed any orders yet.
+                        You haven&apos;t placed any orders yet.
                       </p>
                       <Link
                         href="/shop"

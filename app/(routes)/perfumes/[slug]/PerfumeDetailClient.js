@@ -163,7 +163,7 @@ export default function PerfumeDetailClient({ perfume, related }) {
 
               {/* Action Buttons */}
               <div className="flex space-x-4">
-                <button className="flex-1 bg-amber hover:bg-amber-light text-midnight font-montserrat text-sm font-medium px-6 py-4 rounded-md transition-colors flex items-center justify-center">
+                <button onClick={()=> {}} className="flex-1 bg-amber hover:bg-amber-light text-midnight font-montserrat text-sm font-medium px-6 py-4 rounded-md transition-colors flex items-center justify-center">
                   <ShoppingBag size={18} className="mr-2" />
                   Add to Cart
                 </button>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -16,7 +16,7 @@ import {
   CreditCard,
 } from "lucide-react";
 
-export default function AccountPage() {
+function AccountContent() {
   const searchParams = useSearchParams();
   const tabParam = searchParams.get("tab") || "orders";
   const [activeTab, setActiveTab] = useState(tabParam);
@@ -477,5 +477,13 @@ export default function AccountPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function AccountPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AccountContent />
+    </Suspense>
   );
 }

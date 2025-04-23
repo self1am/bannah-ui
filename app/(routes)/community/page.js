@@ -9,59 +9,11 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { discussionThreads } from "@/data/discussions";
 
 export default function CommunityPage() {
   // Mock discussion threads data
-  const discussionThreads = [
-    {
-      id: 1,
-      title: "What's everyone's favorite oud fragrance?",
-      author: {
-        name: "Sarah_M",
-        avatar: "/api/placeholder/40/40",
-      },
-      excerpt:
-        "Recently I've been exploring different oud fragrances and would love recommendations! I enjoy complex, woody scents with a bit of sweetness. So far I've tried Tom Ford's Oud Wood and Maison Francis Kurkdjian's Oud Satin Mood...",
-      category: "Fragrance Recommendations",
-      replies: 24,
-      likes: 18,
-      views: 132,
-      timeAgo: "2 hours ago",
-      isPopular: true,
-    },
-    {
-      id: 2,
-      title: "Longevity issues with summer scents - any tips?",
-      author: {
-        name: "FragranceLover",
-        avatar: "/api/placeholder/40/40",
-      },
-      excerpt:
-        "With summer approaching, I'm struggling with my citrus scents fading within 2-3 hours. Has anyone found effective ways to extend the longevity of lighter fragrances? I've tried applying to moisturized skin and using the matching body lotion...",
-      category: "Tips & Techniques",
-      replies: 19,
-      likes: 14,
-      views: 87,
-      timeAgo: "1 day ago",
-      isPopular: false,
-    },
-    {
-      id: 3,
-      title: "New fragrance haul review - Spring 2025 niche releases",
-      author: {
-        name: "AromaCritic",
-        avatar: "/api/placeholder/40/40",
-      },
-      excerpt:
-        "Just received my spring haul and wanted to share my first impressions! The collection includes three new niche releases that haven't been widely reviewed yet. First up is 'Azure Dreams' by Parfums de Marly which features...",
-      category: "Reviews",
-      replies: 9,
-      likes: 31,
-      views: 203,
-      timeAgo: "3 days ago",
-      isPopular: true,
-    },
-  ];
+  
 
   // Mock trending topics
   const trendingTopics = [
@@ -93,7 +45,7 @@ export default function CommunityPage() {
             {discussionThreads.map((thread) => (
               <div
                 key={thread.id}
-                className="bg-white border-amber/50 border-[1px] rounded-lg shadow-sm overflow-hidden"
+                className="bg-white border-amber/50 border-[1px] group rounded-lg shadow-sm overflow-hidden"
               >
                 {/* Thread header */}
                 <div className="bg-cream p-4 flex justify-between items-center">
@@ -101,8 +53,8 @@ export default function CommunityPage() {
                     <Image
                       src={thread.author.avatar}
                       alt={thread.author.name}
-                      width={40}
-                      height={40}
+                      width={60}
+                      height={60}
                       className="rounded-full"
                     />
                     <div>
@@ -178,7 +130,7 @@ export default function CommunityPage() {
         </div>
 
         {/* Sidebar */}
-        <div className="space-y-6">
+        <div className="space-y-6 md:sticky top-12">
           {/* CTA Card */}
           <div className="bg-white rounded-lg p-6 shadow-sm">
             <div className="flex flex-col items-center text-center">

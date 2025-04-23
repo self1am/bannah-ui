@@ -78,7 +78,7 @@ export default function CheckoutPage() {
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <Check size={32} className="text-green-600" />
             </div>
-            <h1 className="text-3xl font-playfair text-midnight mb-3">
+            <h1 className="text-3xl font-montserrat text-midnight mb-3">
               Order Confirmed
             </h1>
             <p className="text-midnight/70 font-montserrat max-w-md mx-auto mb-6">
@@ -106,7 +106,7 @@ export default function CheckoutPage() {
         ) : (
           <>
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-playfair text-midnight mb-2">
+              <h1 className="text-3xl font-montserrat text-midnight mb-2">
                 Checkout
               </h1>
               <p className="text-midnight/70 font-montserrat">
@@ -135,7 +135,7 @@ export default function CheckoutPage() {
                   <form onSubmit={handleSubmit}>
                     {/* Contact Information */}
                     <div className="mb-8">
-                      <h2 className="text-lg font-playfair text-midnight mb-4">
+                      <h2 className="text-lg font-montserrat text-midnight mb-4">
                         Contact Information
                       </h2>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -196,7 +196,7 @@ export default function CheckoutPage() {
 
                     {/* Shipping Address */}
                     <div className="mb-8 pb-8 border-b border-midnight/10">
-                      <h2 className="text-lg font-playfair text-midnight mb-4">
+                      <h2 className="text-lg font-montserrat text-midnight mb-4">
                         Shipping Address
                       </h2>
                       <div className="grid grid-cols-1 gap-4">
@@ -260,7 +260,7 @@ export default function CheckoutPage() {
 
                     {/* Payment Method */}
                     <div>
-                      <h2 className="text-lg font-playfair text-midnight mb-4">
+                      <h2 className="text-lg font-montserrat text-midnight mb-4">
                         Payment Method
                       </h2>
 
@@ -403,7 +403,7 @@ export default function CheckoutPage() {
               {/* Order Summary */}
               <div className="lg:col-span-1">
                 <div className="bg-white rounded-xl shadow-sm p-6 sticky top-24">
-                  <h2 className="text-xl font-playfair text-midnight mb-6">
+                  <h2 className="text-xl font-montserrat text-midnight mb-6">
                     Order Summary
                   </h2>
 

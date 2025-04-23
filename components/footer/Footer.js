@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
-              <h3 className="font-playfair text-2xl text-midnight mb-2">
+              <h3 className="font-montserrat text-2xl text-midnight mb-2">
                 Join our fragrance journey
               </h3>
               <p className="font-poppins text-sm text-midnight max-w-md">
@@ -43,8 +43,8 @@ const Footer = () => {
           {/* Brand Column */}
           <div>
             <Link href="/" className="block mb-6">
-              <span className="font-playfair text-2xl text-cream font-semibold">Bannah</span>
-              <span className="font-playfair text-amber text-sm ml-1">Perfumery</span>
+              <span className="font-montserrat text-2xl text-cream font-semibold">Bannah</span>
+              <span className="font-montserrat text-amber text-sm ml-1">Perfumery</span>
             </Link>
             <p className="font-poppins text-sm text-slate mb-6">
               Discover your perfect scent with our personalized fragrance matching and try-before-you-buy subscription service.
@@ -67,7 +67,7 @@ const Footer = () => {
 
           {/* Shop Column */}
           <div>
-            <h4 className="font-playfair text-lg mb-4 text-amber-light">Shop</h4>
+            <h4 className="font-montserrat text-lg mb-4 text-amber-light">Shop</h4>
             <ul className="space-y-2 font-poppins text-sm">
               <li>
                 <Link href="/shop" className="text-slate hover:text-amber-light transition-colors duration-200">
@@ -99,7 +99,7 @@ const Footer = () => {
 
           {/* Company Column */}
           <div>
-            <h4 className="font-playfair text-lg mb-4 text-amber-light">Company</h4>
+            <h4 className="font-montserrat text-lg mb-4 text-amber-light">Company</h4>
             <ul className="space-y-2 font-poppins text-sm">
               <li>
                 <Link href="/about" className="text-slate hover:text-amber-light transition-colors duration-200">
@@ -131,7 +131,7 @@ const Footer = () => {
 
           {/* Support Column */}
           <div>
-            <h4 className="font-playfair text-lg mb-4 text-amber-light">Support</h4>
+            <h4 className="font-montserrat text-lg mb-4 text-amber-light">Support</h4>
             <ul className="space-y-2 font-poppins text-sm">
               <li>
                 <Link href="/help" className="text-slate hover:text-amber-light transition-colors duration-200">

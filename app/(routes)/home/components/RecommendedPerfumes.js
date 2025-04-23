@@ -6,7 +6,7 @@ const RecommendedPerfumes = () => {
   return (
     <section className="bg-cream w-full py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl font-playfair text-midnight mb-8">
+        <h2 className="text-3xl sm:text-4xl font-montserrat text-midnight mb-8">
           Personalized Picks Just for You
         </h2>
 

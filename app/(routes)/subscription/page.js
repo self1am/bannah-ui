@@ -42,7 +42,7 @@ export default function SubscriptionPage() {
     <div className="max-w-6xl mx-auto mt-12 px-4 py-12">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="font-playfair text-3xl md:text-4xl text-midnight mb-4">
+        <h1 className="font-montserrat text-3xl md:text-4xl text-midnight mb-4">
           Fragrance Subscription
         </h1>
         <p className="font-montserrat text-midnight/70 max-w-2xl mx-auto">
@@ -56,7 +56,7 @@ export default function SubscriptionPage() {
         <div className="md:col-span-2 bg-white rounded-lg p-6 shadow-sm">
           {/* Subscription Type Toggle */}
           <div className="mb-8">
-            <h2 className="font-playfair text-xl text-midnight mb-4">
+            <h2 className="font-montserrat text-xl text-midnight mb-4">
               Choose Your Experience
             </h2>
             <div className="flex bg-midnight/5 p-1 rounded-lg">
@@ -90,7 +90,7 @@ export default function SubscriptionPage() {
 
           {/* Sample Count Selection */}
           <div className="mb-8">
-            <h2 className="font-playfair text-xl text-midnight mb-4">
+            <h2 className="font-montserrat text-xl text-midnight mb-4">
               Select Your Plan
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -114,7 +114,7 @@ export default function SubscriptionPage() {
                   Perfect for occasional fragrance explorers
                 </p>
                 <div className="flex items-baseline">
-                  <span className="font-playfair text-2xl text-midnight">
+                  <span className="font-montserrat text-2xl text-midnight">
                     AED 150
                   </span>
                   <span className="text-midnight/60 text-sm ml-1">/month</span>
@@ -141,7 +141,7 @@ export default function SubscriptionPage() {
                   For the devoted fragrance enthusiast
                 </p>
                 <div className="flex items-baseline">
-                  <span className="font-playfair text-2xl text-midnight">
+                  <span className="font-montserrat text-2xl text-midnight">
                     AED 210
                   </span>
                   <span className="text-midnight/60 text-sm ml-1">/month</span>
@@ -152,7 +152,7 @@ export default function SubscriptionPage() {
 
           {/* Timeline Visual */}
           <div className="mb-8">
-            <h2 className="font-playfair text-xl text-midnight mb-4">
+            <h2 className="font-montserrat text-xl text-midnight mb-4">
               How It Works
             </h2>
             <div className="relative">
@@ -193,7 +193,7 @@ export default function SubscriptionPage() {
 
         {/* Right Section - Benefits */}
         <div className="bg-white rounded-lg p-6 shadow-sm h-fit">
-          <h2 className="font-playfair text-xl text-midnight mb-4">
+          <h2 className="font-montserrat text-xl text-midnight mb-4">
             Membership Benefits
           </h2>
 

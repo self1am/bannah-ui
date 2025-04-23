@@ -16,7 +16,7 @@ const PerfumeCard = ({ perfume }) => {
       </div>
 
       <div className="p-4">
-        <h3 className="font-playfair text-lg text-midnight">{perfume.name}</h3>
+        <h3 className="font-montserrat text-lg text-midnight">{perfume.name}</h3>
         <p className="text-sm text-rosegold font-montserrat font-medium">{perfume.brand}</p>
         <p className="text-sm text-slate font-poppins mt-1">{perfume.notes.join(", ")}</p>
         <div className="mt-2 text-amber font-semibold">AED {perfume.price}</div>

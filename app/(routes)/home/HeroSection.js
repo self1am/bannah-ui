@@ -40,7 +40,7 @@ const FragranceHero = () => {
             Luxury Fragrance Collection
           </p>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair text-cream space-y-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-montserrat text-cream space-y-2">
             <span className="block">Discover Your</span>
             <span className="block text-amber">
               <Typewriter
@@ -101,7 +101,7 @@ const FragranceHero = () => {
 
           {/* Floating caption/badge - adjusted size for mobile */}
           <div className="absolute bottom-8 md:bottom-16 -left-2 md:-left-4 bg-midnight/80 backdrop-blur-sm p-3 md:p-4 rounded border-l-2 border-amber max-w-[200px] md:max-w-xs">
-            <p className="font-playfair italic text-amber text-xs md:text-sm">
+            <p className="font-montserrat italic text-amber text-xs md:text-sm">
               Featured Collection
             </p>
             <p className="font-montserrat text-cream text-base md:text-lg">
@@ -125,7 +125,7 @@ const FragranceHero = () => {
 
       {/* Decorative quote - visible only on large screens */}
       {/* <div className="absolute top-8 right-8 hidden lg:block z-20">
-        <p className="font-playfair italic text-amber-light opacity-70 text-lg">
+        <p className="font-montserrat italic text-amber-light opacity-70 text-lg">
           &quot;A fragrance is a work of art.&quot;
         </p>
       </div> */}

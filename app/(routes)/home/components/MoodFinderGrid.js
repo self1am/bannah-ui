@@ -27,7 +27,7 @@ const MoodFinderGrid = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <div className="flex justify-between items-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-playfair text-midnight">
+          <h2 className="text-3xl sm:text-4xl font-montserrat text-midnight">
             Explore by Mood
           </h2>
           {selectedMood && (
@@ -49,7 +49,7 @@ const MoodFinderGrid = () => {
                   {selectedMood.icon}
                 </span>
                 <div>
-                  <h3 className="font-playfair text-2xl text-midnight">
+                  <h3 className="font-montserrat text-2xl text-midnight">
                     {selectedMood.name} Fragrances
                   </h3>
                   <p className="font-poppins text-sm text-midnight/70 mt-1">

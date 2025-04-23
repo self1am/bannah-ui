@@ -164,10 +164,10 @@ const Header = () => {
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
-                <span className="font-playfair text-2xl text-midnight font-semibold">
+                <span className="font-montserrat text-2xl text-midnight font-semibold">
                   Bannah
                 </span>
-                <span className="font-playfair text-amber text-sm ml-1">
+                <span className="font-montserrat text-amber text-sm ml-1">
                   Perfumery
                 </span>
               </Link>
@@ -188,7 +188,7 @@ const Header = () => {
                 <Search size={20} />
               </button>
               <Link
-                href="/wishlist"
+                href="/account?tab=wishlist"
                 className="text-midnight hover:text-amber transition-colors duration-200"
               >
                 <Heart size={20} />
@@ -385,31 +385,31 @@ const Header = () => {
               <nav className="flex flex-col space-y-4">
                 <Link
                   href="/"
-                  className="font-playfair text-lg text-midnight hover:text-amber py-2 border-b border-amber-light"
+                  className="font-montserrat text-lg text-midnight hover:text-amber py-2 border-b border-amber-light"
                 >
                   Home
                 </Link>
                 <Link
                   href="/shop"
-                  className="font-playfair text-lg text-midnight hover:text-amber py-2 border-b border-amber-light"
+                  className="font-montserrat text-lg text-midnight hover:text-amber py-2 border-b border-amber-light"
                 >
                   Shop
                 </Link>
                 <Link
                   href="/subscription"
-                  className="font-playfair text-lg text-midnight hover:text-amber py-2 border-b border-amber-light"
+                  className="font-montserrat text-lg text-midnight hover:text-amber py-2 border-b border-amber-light"
                 >
                   Subscribe
                 </Link>
                 <Link
                   href="/community"
-                  className="font-playfair text-lg text-midnight hover:text-amber py-2 border-b border-amber-light"
+                  className="font-montserrat text-lg text-midnight hover:text-amber py-2 border-b border-amber-light"
                 >
                   Community
                 </Link>
                 {/* <Link
                   href="/about"
-                  className="font-playfair text-lg text-midnight hover:text-amber py-2 border-b border-amber-light"
+                  className="font-montserrat text-lg text-midnight hover:text-amber py-2 border-b border-amber-light"
                 >
                   About
                 </Link> */}
@@ -465,7 +465,7 @@ const NavLink = ({ href, children }) => {
   return (
     <Link
       href={href}
-      className="font-playfair text-lg text-midnight hover:text-amber transition-colors duration-200 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-amber after:transition-all after:duration-300 hover:after:w-full"
+      className="font-montserrat text-lg text-midnight hover:text-amber transition-colors duration-200 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-amber after:transition-all after:duration-300 hover:after:w-full"
     >
       {children}
     </Link>

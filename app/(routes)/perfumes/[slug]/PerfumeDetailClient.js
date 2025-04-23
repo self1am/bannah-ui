@@ -84,7 +84,7 @@ export default function PerfumeDetailClient({ perfume, related }) {
                 <p className="font-montserrat text-amber uppercase tracking-wider text-sm mb-2">
                   {perfume.brand}
                 </p>
-                <h1 className="text-5xl font-playfair text-midnight leading-tight">
+                <h1 className="text-5xl font-montserrat text-midnight leading-tight">
                   {perfume.name}
                 </h1>
 
@@ -390,7 +390,7 @@ export default function PerfumeDetailClient({ perfume, related }) {
         <div className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="flex justify-between items-center mb-10">
-              <h2 className="text-3xl font-playfair text-midnight">
+              <h2 className="text-3xl font-montserrat text-midnight">
                 You Might Also Like
               </h2>
               <Link

@@ -66,7 +66,7 @@ export default function CartPage() {
     <div className="min-h-screen mt-12 bg-cream py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-playfair text-midnight mb-2">
+          <h1 className="text-3xl font-montserrat text-midnight mb-2">
             Your Cart
           </h1>
           <p className="text-midnight/70 font-montserrat">
@@ -80,7 +80,7 @@ export default function CartPage() {
             <div className="lg:col-span-2">
               <div className="bg-white rounded-xl shadow-sm p-6">
                 <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-xl font-playfair text-midnight">
+                  <h2 className="text-xl font-montserrat text-midnight">
                     Cart Items
                   </h2>
                   <span className="text-sm text-midnight/70 font-montserrat">
@@ -162,7 +162,7 @@ export default function CartPage() {
             {/* Order Summary */}
             <div className="lg:col-span-1">
               <div className="bg-white rounded-xl shadow-sm p-6 sticky top-24">
-                <h2 className="text-xl font-playfair text-midnight mb-6">
+                <h2 className="text-xl font-montserrat text-midnight mb-6">
                   Order Summary
                 </h2>
 

@@ -5,7 +5,7 @@ import Footer from "@/components/footer/Footer";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-montserrat",
 });
 const poppins = Poppins({
   weight: ["300", "400", "500", "600"],

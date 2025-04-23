@@ -76,7 +76,7 @@ export default function CommunityPage() {
     <div className="max-w-6xl mx-auto mt-12 px-4 py-12">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="font-playfair text-3xl md:text-4xl text-midnight mb-4">
+        <h1 className="font-montserrat text-3xl md:text-4xl text-midnight mb-4">
           Fragrance Community
         </h1>
         <p className="font-montserrat text-midnight/70 max-w-2xl mx-auto">
@@ -123,7 +123,7 @@ export default function CommunityPage() {
                 {/* Thread content */}
                 <div className="p-4">
                   <div className="flex items-start justify-between">
-                    <h3 className="font-playfair text-lg text-midnight mb-2 hover:text-amber transition-colors">
+                    <h3 className="font-montserrat text-lg text-midnight mb-2 hover:text-amber transition-colors">
                       <Link href="#">{thread.title}</Link>
                     </h3>
                     {thread.isPopular && (
@@ -183,7 +183,7 @@ export default function CommunityPage() {
           <div className="bg-white rounded-lg p-6 shadow-sm">
             <div className="flex flex-col items-center text-center">
               <Users size={32} className="text-amber mb-3" />
-              <h3 className="font-playfair text-xl text-midnight mb-2">
+              <h3 className="font-montserrat text-xl text-midnight mb-2">
                 Join the Conversation
               </h3>
               <p className="text-sm text-midnight/70 mb-4">
@@ -207,7 +207,7 @@ export default function CommunityPage() {
 
           {/* Trending Topics */}
           <div className="bg-white rounded-lg p-6 shadow-sm">
-            <h3 className="font-playfair text-lg text-midnight mb-4">
+            <h3 className="font-montserrat text-lg text-midnight mb-4">
               Trending Topics
             </h3>
             <ul className="space-y-3">
@@ -227,24 +227,24 @@ export default function CommunityPage() {
 
           {/* Community Stats */}
           <div className="bg-white rounded-lg p-6 shadow-sm">
-            <h3 className="font-playfair text-lg text-midnight mb-4">
+            <h3 className="font-montserrat text-lg text-midnight mb-4">
               Community Stats
             </h3>
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center p-3 bg-cream rounded-md">
-                <div className="font-playfair text-2xl text-midnight">5.2K</div>
+                <div className="font-montserrat text-2xl text-midnight">5.2K</div>
                 <div className="text-xs text-midnight/70">Members</div>
               </div>
               <div className="text-center p-3 bg-cream rounded-md">
-                <div className="font-playfair text-2xl text-midnight">314</div>
+                <div className="font-montserrat text-2xl text-midnight">314</div>
                 <div className="text-xs text-midnight/70">Active Now</div>
               </div>
               <div className="text-center p-3 bg-cream rounded-md">
-                <div className="font-playfair text-2xl text-midnight">824</div>
+                <div className="font-montserrat text-2xl text-midnight">824</div>
                 <div className="text-xs text-midnight/70">Topics</div>
               </div>
               <div className="text-center p-3 bg-cream rounded-md">
-                <div className="font-playfair text-2xl text-midnight">
+                <div className="font-montserrat text-2xl text-midnight">
                   12.7K
                 </div>
                 <div className="text-xs text-midnight/70">Posts</div>

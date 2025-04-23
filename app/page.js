@@ -11,7 +11,7 @@ export default function Home() {
       <RecommendedPerfumes />
       {/* <MoodFinderGrid /> */}
       {/* </div> */}
-      {/* <h1 className="font-playfair text-5xl">Hanafe</h1>
+      {/* <h1 className="font-montserrat text-5xl">Hanafe</h1>
       <h2 className="font-poppins">Hanafe</h2>
       <h3 className="font-montserrat">Hanafe</h3> */}
     </div>

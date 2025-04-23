@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   User,
   Heart,
@@ -16,7 +17,9 @@ import {
 } from "lucide-react";
 
 export default function AccountPage() {
-  const [activeTab, setActiveTab] = useState("orders");
+  const searchParams = useSearchParams();
+  const tabParam = searchParams.get("tab") || "orders";
+  const [activeTab, setActiveTab] = useState(tabParam);
 
   // Dummy user data
   const user = {
@@ -102,7 +105,7 @@ export default function AccountPage() {
     <div className="min-h-screen mt-[60px] bg-cream py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-playfair text-midnight mb-2">
+          <h1 className="text-3xl font-montserrat text-midnight mb-2">
             My Account
           </h1>
           <p className="text-midnight/70 font-montserrat">
@@ -194,7 +197,7 @@ export default function AccountPage() {
             {activeTab === "orders" && (
               <div className="bg-white rounded-xl shadow-sm p-6">
                 <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-xl font-playfair text-midnight">
+                  <h2 className="text-xl font-montserrat text-midnight">
                     My Orders
                   </h2>
                   <span className="text-sm text-midnight/70 font-montserrat">
@@ -315,7 +318,7 @@ export default function AccountPage() {
             {activeTab === "wishlist" && (
               <div className="bg-white rounded-xl shadow-sm p-6">
                 <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-xl font-playfair text-midnight">
+                  <h2 className="text-xl font-montserrat text-midnight">
                     My Wishlist
                   </h2>
                   <span className="text-sm text-midnight/70 font-montserrat">
@@ -363,7 +366,7 @@ export default function AccountPage() {
             {/* Settings Tab */}
             {activeTab === "settings" && (
               <div className="bg-white rounded-xl shadow-sm p-6">
-                <h2 className="text-xl font-playfair text-midnight mb-6">
+                <h2 className="text-xl font-montserrat text-midnight mb-6">
                   Account Settings
                 </h2>
 

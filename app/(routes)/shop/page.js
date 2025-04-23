@@ -121,7 +121,7 @@ const ShopPage = () => {
       <div className="max-w-7xl mx-auto px-4 py-12 mt-12">
         {/* Page Header */}
         <div className="mb-10">
-          <h1 className="font-playfair text-4xl md:text-5xl text-midnight mb-2">
+          <h1 className="font-montserrat text-4xl md:text-5xl text-midnight mb-2">
             Fragrance Collection
           </h1>
           <p className="font-poppins text-midnight/70">
@@ -174,7 +174,7 @@ const ShopPage = () => {
             {/* Empty State */}
             {filteredPerfumes.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-2xl font-playfair text-midnight mb-2">
+                <p className="text-2xl font-montserrat text-midnight mb-2">
                   No fragrances found
                 </p>
                 <p className="text-midnight/70 mb-6">
@@ -225,7 +225,7 @@ const ShopFilters = ({
   return (
     <div className="w-full md:w-1/4 bg-white rounded-lg p-6 shadow-sm h-fit md:sticky top-24">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="font-playfair text-xl text-midnight">Filters</h2>
+        <h2 className="font-montserrat text-xl text-midnight">Filters</h2>
         <button
           onClick={clearAllFilters}
           className="text-sm text-amber hover:text-amber-light transition-colors"
@@ -492,7 +492,7 @@ const PerfumeGrid = ({ perfumes }) => {
             <div className="p-4">
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <h3 className="font-playfair text-lg text-midnight group-hover:text-amber transition-colors">
+                  <h3 className="font-montserrat text-lg text-midnight group-hover:text-amber transition-colors">
                     {perfume.name}
                   </h3>
                   <p className="text-sm text-midnight/60 font-montserrat">

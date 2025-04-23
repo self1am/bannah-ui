@@ -201,7 +201,7 @@ export default function QuizPage() {
 
       <div className="max-w-3xl mx-auto relative z-10">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-playfair text-midnight">
+          <h2 className="text-3xl font-montserrat text-midnight">
             Find Your Signature Scent
           </h2>
           <p className="text-midnight/70 font-montserrat">
@@ -232,7 +232,7 @@ export default function QuizPage() {
           {/* Step 1: Notes Preference */}
           {step === 0 && (
             <div className="space-y-6">
-              <h1 className="text-3xl font-playfair text-midnight">
+              <h1 className="text-3xl font-montserrat text-midnight">
                 What scent notes do you enjoy?
               </h1>
               <p className="text-midnight/70 font-montserrat">
@@ -265,7 +265,7 @@ export default function QuizPage() {
           {/* Step 2: Mood */}
           {step === 1 && (
             <div className="space-y-6">
-              <h1 className="text-3xl font-playfair text-midnight">
+              <h1 className="text-3xl font-montserrat text-midnight">
                 How do you want your perfume to make you feel?
               </h1>
               <p className="text-midnight/70 font-montserrat">
@@ -298,7 +298,7 @@ export default function QuizPage() {
           {/* Step 3: Occasion */}
           {step === 2 && (
             <div className="space-y-6">
-              <h1 className="text-3xl font-playfair text-midnight">
+              <h1 className="text-3xl font-montserrat text-midnight">
                 When will you mostly wear this fragrance?
               </h1>
               <p className="text-midnight/70 font-montserrat">
@@ -331,7 +331,7 @@ export default function QuizPage() {
           {/* Step 4: Past Favorites */}
           {step === 3 && (
             <div className="space-y-6">
-              <h1 className="text-3xl font-playfair text-midnight">
+              <h1 className="text-3xl font-montserrat text-midnight">
                 Have you enjoyed any of these before?
               </h1>
               <p className="text-midnight/70 font-montserrat">
@@ -375,7 +375,7 @@ export default function QuizPage() {
           {/* Step 5: Intensity Preference */}
           {step === 4 && (
             <div className="space-y-6">
-              <h1 className="text-3xl font-playfair text-midnight">
+              <h1 className="text-3xl font-montserrat text-midnight">
                 What scent intensity do you prefer?
               </h1>
               <p className="text-midnight/70 font-montserrat">
@@ -413,7 +413,7 @@ export default function QuizPage() {
           {step === totalSteps && isCalculating && (
             <div className="flex flex-col items-center justify-center py-16">
               <div className="text-center space-y-6">
-                <h1 className="text-3xl font-playfair text-midnight">
+                <h1 className="text-3xl font-montserrat text-midnight">
                   Finding Your Perfect Match
                 </h1>
                 <p className="text-midnight/70 font-montserrat max-w-md mx-auto">
@@ -454,7 +454,7 @@ export default function QuizPage() {
           {step === totalSteps && !isCalculating && (
             <div className="space-y-8">
               <div className="text-center">
-                <h1 className="text-3xl font-playfair text-midnight mb-2">
+                <h1 className="text-3xl font-montserrat text-midnight mb-2">
                   Your Fragrance Matches
                 </h1>
                 <p className="text-midnight/70 font-montserrat max-w-md mx-auto">
@@ -510,7 +510,7 @@ export default function QuizPage() {
               </div>
 
               <div className="bg-midnight/5 rounded-lg p-6 mt-8">
-                <h3 className="font-playfair text-xl mb-3">
+                <h3 className="font-montserrat text-xl mb-3">
                   Ready to experience these scents?
                 </h3>
                 <p className="text-midnight/70 mb-4">

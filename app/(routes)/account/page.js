@@ -27,7 +27,7 @@ function AccountContent() {
     name: "Sarah Johnson",
     email: "sarah.j@example.com",
     phone: "+971 52 123 4567",
-    avatar: "https://randomuser.me/api/portraits/thumb/women/61.jpg",
+    avatar: "/images/avatars/avatar2.jpg",
     joinDate: "March 2025",
     address: {
       street: "Apartment 1204, Marina Heights",

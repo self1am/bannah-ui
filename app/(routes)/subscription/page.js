@@ -200,7 +200,7 @@ export default function SubscriptionPage() {
           <div className="mb-6">
             <div className="relative aspect-square bg-midnight/5 rounded-lg mb-4">
               <Image
-                src="/api/placeholder/400/400"
+                src="/images/perfume-black-orchid.jpg"
                 alt="Subscription box"
                 fill
                 className="object-cover rounded-lg"

@@ -83,7 +83,7 @@ const FragranceHero = () => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative h-[80%] w-[80%] overflow-hidden rounded-lg">
               <Image
-                src="/images/hero-2.jpg"
+                src="/images/featured.jpeg"
                 alt="Featured fragrance bottle"
                 fill
                 className="object-cover"

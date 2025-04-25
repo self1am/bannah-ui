@@ -143,28 +143,28 @@ export default function QuizPage() {
       id: 1,
       name: "Santal 33",
       brand: "Le Labo",
-      image: "/perfumes/example1.jpg",
+      image: "/images/perfume-santal-33.jpg",
     },
     {
       id: 2,
       name: "Black Orchid",
       brand: "Tom Ford",
-      image: "/perfumes/example2.jpg",
+      image: "/images/perfume-black-orchid.jpg",
     },
-    { id: 3, name: "J'adore", brand: "Dior", image: "/perfumes/example3.jpg" },
+    { id: 3, name: "J'adore", brand: "Dior", image: "/images/perfume-jadore.jpg" },
     {
       id: 4,
       name: "Bleu de Chanel",
       brand: "Chanel",
-      image: "/perfumes/example4.jpg",
+      image: "/images/perfume-bleu-de-chanel.jpg",
     },
     {
       id: 5,
       name: "Light Blue",
       brand: "Dolce & Gabbana",
-      image: "/perfumes/example5.jpg",
+      image: "/images/perfume-lightblue.jpg",
     },
-    { id: 6, name: "Aventus", brand: "Creed", image: "/perfumes/example6.jpg" },
+    { id: 6, name: "Aventus", brand: "Creed", image: "/images/perfume-aventus.jpg" },
   ];
 
   // Intensity options

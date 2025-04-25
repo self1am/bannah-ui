@@ -1,63 +1,48 @@
 "use client";
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { 
-  ShoppingCart, 
-  ChevronRight, 
-  Trash2, 
-  Plus, 
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  ShoppingCart,
+  ChevronRight,
+  Trash2,
+  Plus,
   Minus,
-  ArrowLeft
-} from 'lucide-react';
+  ArrowLeft,
+} from "lucide-react";
+import { perfumes } from "@/data/perfumes";
 
 export default function CartPage() {
   // Mock cart data
   const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Organic Lavender Essential Oil",
-      brand: "Aromatic Essentials",
-      price: 58.99,
-      quantity: 1,
-      image: "/products/lavender-oil.jpg",
-    },
-    {
-      id: 2,
-      name: "Rose Quartz Facial Roller",
-      brand: "Crystal Beauty",
-      price: 89.50,
-      quantity: 2,
-      image: "/products/facial-roller.jpg",
-    },
-    {
-      id: 3,
-      name: "Natural Bamboo Bath Caddy",
-      brand: "Eco Luxe",
-      price: 120.00,
-      quantity: 1,
-      image: "/products/bath-caddy.jpg",
-    }
+    {...perfumes[0], quantity: 2},
+    {...perfumes[1], quantity: 1},
+    {...perfumes[2], quantity: 1},
   ]);
 
   // Update quantity function
   const updateQuantity = (id, change) => {
-    setCartItems(cartItems.map(item => {
-      if (item.id === id) {
-        const newQuantity = Math.max(1, item.quantity + change);
-        return { ...item, quantity: newQuantity };
-      }
-      return item;
-    }));
+    setCartItems(
+      cartItems.map((item) => {
+        if (item.id === id) {
+          const newQuantity = Math.max(1, item.quantity + change);
+          return { ...item, quantity: newQuantity };
+        }
+        return item;
+      })
+    );
   };
 
   // Remove item function
   const removeItem = (id) => {
-    setCartItems(cartItems.filter(item => item.id !== id));
+    setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
   // Calculate totals
-  const subtotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+  const subtotal = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
   const shipping = subtotal > 250 ? 0 : 20;
   const tax = subtotal * 0.05; // 5% VAT
   const total = subtotal + shipping + tax;
@@ -117,7 +102,7 @@ export default function CartPage() {
 
                         <div className="flex flex-col items-end gap-3">
                           <div className="flex items-center border border-midnight/10 rounded-md">
-                            <button 
+                            <button
                               onClick={() => updateQuantity(item.id, -1)}
                               className="px-2 py-1 text-midnight/70 hover:bg-midnight/5"
                             >
@@ -126,19 +111,19 @@ export default function CartPage() {
                             <span className="px-3 py-1 text-sm">
                               {item.quantity}
                             </span>
-                            <button 
+                            <button
                               onClick={() => updateQuantity(item.id, 1)}
                               className="px-2 py-1 text-midnight/70 hover:bg-midnight/5"
                             >
                               <Plus size={14} />
                             </button>
                           </div>
-                          
-                          <button 
+
+                          <button
                             onClick={() => removeItem(item.id)}
                             className="text-midnight/60 hover:text-midnight text-xs flex items-center"
                           >
-                            <Trash2 size={14} className="mr-1" /> 
+                            <Trash2 size={14} className="mr-1" />
                             Remove
                           </button>
                         </div>
@@ -169,7 +154,9 @@ export default function CartPage() {
                 <div className="space-y-3 pb-4">
                   <div className="flex justify-between text-sm">
                     <span className="text-midnight/70">Subtotal</span>
-                    <span className="font-medium">AED {subtotal.toFixed(2)}</span>
+                    <span className="font-medium">
+                      AED {subtotal.toFixed(2)}
+                    </span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-midnight/70">Shipping</span>
@@ -199,9 +186,10 @@ export default function CartPage() {
                   >
                     Proceed to Checkout
                   </Link>
-                  
+
                   <div className="text-xs text-center text-midnight/60 px-4">
-                    By proceeding, you agree to our Terms of Service and Privacy Policy
+                    By proceeding, you agree to our Terms of Service and Privacy
+                    Policy
                   </div>
                 </div>
 
@@ -229,13 +217,8 @@ export default function CartPage() {
           </div>
         ) : (
           <div className="bg-white rounded-xl shadow-sm p-6 text-center py-12">
-            <ShoppingCart
-              size={48}
-              className="mx-auto text-midnight/20 mb-4"
-            />
-            <h3 className="font-medium text-lg mb-1">
-              Your cart is empty
-            </h3>
+            <ShoppingCart size={48} className="mx-auto text-midnight/20 mb-4" />
+            <h3 className="font-medium text-lg mb-1">Your cart is empty</h3>
             <p className="text-midnight/60 text-sm">
               Looks like you haven&apos;t added any items to your cart yet.
             </p>

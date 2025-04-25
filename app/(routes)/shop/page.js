@@ -463,76 +463,195 @@ const ShopFilters = ({
 };
 
 // Product Grid component
-const PerfumeGrid = ({ perfumes }) => {
+const PerfumeGrid = ({ perfumes, itemsPerPage = 12 }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  // Calculate total pages
+  const totalPages = Math.ceil(perfumes.length / itemsPerPage);
+  
+  // Get current items
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentPerfumes = perfumes.slice(indexOfFirstItem, indexOfLastItem);
+  
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
+  // Go to next or previous page
+  const nextPage = () => setCurrentPage(prev => Math.min(prev + 1, totalPages));
+  const prevPage = () => setCurrentPage(prev => Math.max(prev - 1, 1));
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {perfumes.map((perfume) => (
-        <Link
-          href={`/perfumes/${perfume.slug}`}
-          key={perfume.id}
-          className="group cursor-pointer"
-        >
-          <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-            {/* Product Image */}
-            <div className="relative aspect-square bg-midnight/5">
-              <Image
-                src={perfume.image || "/images/placeholder-perfume.jpg"}
-                alt={perfume.name}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              {perfume.featured && (
-                <span className="absolute top-2 right-2 bg-amber text-midnight text-xs px-2 py-1 rounded-full font-montserrat">
-                  Featured
-                </span>
-              )}
+    <>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {currentPerfumes.map((perfume) => (
+          <Link
+            href={`/perfumes/${perfume.slug}`}
+            key={perfume.id}
+            className="group cursor-pointer"
+          >
+            <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+              {/* Product Image */}
+              <div className="relative aspect-square bg-midnight/5">
+                <Image
+                  src={perfume.image || "/images/placeholder-perfume.jpg"}
+                  alt={perfume.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                {perfume.featured && (
+                  <span className="absolute top-2 right-2 bg-amber text-midnight text-xs px-2 py-1 rounded-full font-montserrat">
+                    Featured
+                  </span>
+                )}
+              </div>
+              {/* Product Info */}
+              <div className="p-4">
+                <div className="flex justify-between items-start mb-2">
+                  <div>
+                    <h3 className="font-montserrat text-lg text-midnight group-hover:text-amber transition-colors">
+                      {perfume.name}
+                    </h3>
+                    <p className="text-sm text-midnight/60 font-montserrat">
+                      {perfume.brand}
+                    </p>
+                  </div>
+                  <div className="flex items-center">
+                    <Star size={14} className="text-amber fill-amber" />
+                    <span className="text-sm ml-1 text-midnight/70">
+                      {perfume.rating}
+                    </span>
+                  </div>
+                </div>
+                {/* Notes */}
+                <div className="flex flex-wrap gap-1 mb-3">
+                  {perfume.notes.slice(0, 3).map((note) => (
+                    <span
+                      key={note}
+                      className="text-xs bg-cream text-midnight/70 px-2 py-1 rounded-full"
+                    >
+                      {note}
+                    </span>
+                  ))}
+                </div>
+                {/* Price */}
+                <div className="flex justify-between items-center">
+                  <span className="font-montserrat font-medium text-midnight">
+                    AED {perfume.price}
+                  </span>
+                  <span className="text-xs text-amber group-hover:translate-x-1 transition-transform duration-300">
+                    View Details →
+                  </span>
+                </div>
+              </div>
             </div>
-
-            {/* Product Info */}
-            <div className="p-4">
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="font-montserrat text-lg text-midnight group-hover:text-amber transition-colors">
-                    {perfume.name}
-                  </h3>
-                  <p className="text-sm text-midnight/60 font-montserrat">
-                    {perfume.brand}
-                  </p>
-                </div>
-                <div className="flex items-center">
-                  <Star size={14} className="text-amber fill-amber" />
-                  <span className="text-sm ml-1 text-midnight/70">
-                    {perfume.rating}
-                  </span>
-                </div>
-              </div>
-
-              {/* Notes */}
-              <div className="flex flex-wrap gap-1 mb-3">
-                {perfume.notes.slice(0, 3).map((note) => (
-                  <span
-                    key={note}
-                    className="text-xs bg-cream text-midnight/70 px-2 py-1 rounded-full"
-                  >
-                    {note}
-                  </span>
-                ))}
-              </div>
-
-              {/* Price */}
-              <div className="flex justify-between items-center">
-                <span className="font-montserrat font-medium text-midnight">
-                  AED {perfume.price}
-                </span>
-                <span className="text-xs text-amber group-hover:translate-x-1 transition-transform duration-300">
-                  View Details →
-                </span>
-              </div>
+          </Link>
+        ))}
+      </div>
+      
+      {/* Creative Pagination */}
+      {totalPages > 1 && (
+        <div className="mt-10 flex flex-col items-center">
+          <div className="relative w-full max-w-md flex items-center justify-center my-6">
+            {/* Decorative elements */}
+            <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-midnight/20 to-transparent"></div>
+            <div className="absolute left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-amber to-transparent"></div>
+            
+            {/* Page counter */}
+            <div className="bg-white px-4 py-2 relative z-10 font-montserrat text-sm">
+              <span className="text-amber font-medium">Page {currentPage}</span>
+              <span className="text-midnight/60"> of {totalPages}</span>
             </div>
           </div>
-        </Link>
-      ))}
-    </div>
+          
+          <div className="flex items-center space-x-2">
+            {/* Previous page button */}
+            <button 
+              onClick={prevPage} 
+              disabled={currentPage === 1}
+              className={`flex items-center justify-center h-10 w-10 rounded-full border ${
+                currentPage === 1 
+                  ? 'border-midnight/10 text-midnight/30 cursor-not-allowed' 
+                  : 'border-midnight/20 text-midnight hover:border-amber hover:text-amber transition-colors'
+              }`}
+              aria-label="Previous page"
+            >
+              <span className="sr-only">Previous page</span>
+              ←
+            </button>
+            
+            {/* Page numbers */}
+            <div className="flex space-x-1">
+              {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                // Logic to display pages around current page
+                let pageNum;
+                if (totalPages <= 5) {
+                  pageNum = i + 1;
+                } else if (currentPage <= 3) {
+                  pageNum = i + 1;
+                } else if (currentPage >= totalPages - 2) {
+                  pageNum = totalPages - 4 + i;
+                } else {
+                  pageNum = currentPage - 2 + i;
+                }
+                
+                return (
+                  <button
+                    key={pageNum}
+                    onClick={() => paginate(pageNum)}
+                    className={`h-10 w-10 rounded-full flex items-center justify-center font-montserrat text-sm transition-all duration-300 ${
+                      currentPage === pageNum
+                        ? 'bg-amber text-white font-medium shadow-md scale-110'
+                        : 'bg-white border border-midnight/10 text-midnight/70 hover:border-amber hover:text-amber'
+                    }`}
+                    aria-label={`Go to page ${pageNum}`}
+                    aria-current={currentPage === pageNum ? 'page' : undefined}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+              
+              {/* Ellipsis for many pages */}
+              {totalPages > 5 && currentPage < totalPages - 2 && (
+                <span className="flex items-center justify-center w-10 text-midnight/50">...</span>
+              )}
+              
+              {/* Always show last page if there are many pages */}
+              {totalPages > 5 && currentPage < totalPages - 2 && (
+                <button
+                  onClick={() => paginate(totalPages)}
+                  className="h-10 w-10 rounded-full flex items-center justify-center font-montserrat text-sm bg-white border border-midnight/10 text-midnight/70 hover:border-amber hover:text-amber"
+                  aria-label={`Go to page ${totalPages}`}
+                >
+                  {totalPages}
+                </button>
+              )}
+            </div>
+            
+            {/* Next page button */}
+            <button 
+              onClick={nextPage} 
+              disabled={currentPage === totalPages}
+              className={`flex items-center justify-center h-10 w-10 rounded-full border ${
+                currentPage === totalPages 
+                  ? 'border-midnight/10 text-midnight/30 cursor-not-allowed' 
+                  : 'border-midnight/20 text-midnight hover:border-amber hover:text-amber transition-colors'
+              }`}
+              aria-label="Next page"
+            >
+              <span className="sr-only">Next page</span>
+              →
+            </button>
+          </div>
+          
+          {/* Page info */}
+          <p className="mt-4 text-sm text-midnight/50 font-montserrat">
+            Showing {indexOfFirstItem + 1}-{Math.min(indexOfLastItem, perfumes.length)} of {perfumes.length} fragrances
+          </p>
+        </div>
+      )}
+    </>
   );
 };
 

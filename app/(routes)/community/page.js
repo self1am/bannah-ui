@@ -18,23 +18,22 @@ export default function CommunityPage() {
     // Get a random index
     const imagePaths = [
       "/images/avatars/avatar1.jpg",
+      "/images/avatars/avatar-male.jpg",
       "/images/avatars/avatar2.jpg",
       "/images/avatars/avatar3.jpg",
-      "/images/avatars/avatar4.jpg",
-      "/images/avatars/avatar5.jpg",
-      "/images/avatars/avatar-male.jpg",
-      "/images/avatars/avatar-male-1.jpg",
-      "/images/avatars/avatar-male-2.jpg",
       "/images/avatars/avatar-male-3.jpg",
+      "/images/avatars/avatar4.jpg",
+      "/images/avatars/avatar-male-2.jpg",
+      "/images/avatars/avatar5.jpg",
+      "/images/avatars/avatar-male-1.jpg",
       "/images/avatars/avatar-male-4.jpg",
     ]
-    const randomIndex = Math.floor(Math.random() * 10);
     
     return {
       ...thread,
       author:{
         ...thread.author,
-        avatar: imagePaths[randomIndex],
+        avatar: imagePaths[thread.id-1],
       }
     };
   });

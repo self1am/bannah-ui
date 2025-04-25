@@ -179,7 +179,7 @@ const Header = () => {
               <NavLink href="/shop">Shop</NavLink>
               <NavLink href="/subscription">Subscribe</NavLink>
               <NavLink href="/community">Community</NavLink>
-              {/* <NavLink href="/about">About</NavLink> */}
+              <NavLink href="/quiz">Quiz</NavLink>
             </nav>
 
             {/* Desktop Actions */}

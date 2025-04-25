@@ -15,6 +15,7 @@ import {
   Calendar,
   CreditCard,
 } from "lucide-react";
+import { perfumes } from "@/data/perfumes";
 
 function AccountContent() {
   const searchParams = useSearchParams();
@@ -26,7 +27,7 @@ function AccountContent() {
     name: "Sarah Johnson",
     email: "sarah.j@example.com",
     phone: "+971 52 123 4567",
-    avatar: "/avatars/user.jpg",
+    avatar: "https://randomuser.me/api/portraits/thumb/women/61.jpg",
     joinDate: "March 2025",
     address: {
       street: "Apartment 1204, Marina Heights",
@@ -42,63 +43,23 @@ function AccountContent() {
       date: "April 10, 2025",
       status: "Delivered",
       total: 475,
-      items: [
-        {
-          id: 1,
-          name: "Rose Elixir",
-          brand: "Maison Alhambra",
-          price: 320,
-          image: "/perfumes/product1.jpg",
-        },
-        {
-          id: 2,
-          name: "Sample Set: Spring Collection",
-          brand: "Various",
-          price: 155,
-          image: "/perfumes/sample-set.jpg",
-        },
-      ],
+      items: [perfumes[0], perfumes[1]],
     },
     {
       id: "ORD-3651",
       date: "March 24, 2025",
       status: "Delivered",
       total: 190,
-      items: [
-        {
-          id: 3,
-          name: "Amber Nights",
-          brand: "Maison Alhambra",
-          price: 190,
-          image: "/perfumes/product2.jpg",
-        },
-      ],
+      items: [perfumes[3]],
     },
   ];
 
   // Dummy wishlist data
   const wishlist = [
-    {
-      id: 4,
-      name: "Desert Rose",
-      brand: "Oriental Scents",
-      price: 280,
-      image: "/perfumes/product3.jpg",
-    },
-    {
-      id: 5,
-      name: "Oud & Bergamot",
-      brand: "Maison Alhambra",
-      price: 350,
-      image: "/perfumes/product4.jpg",
-    },
-    {
-      id: 6,
-      name: "Citrus Paradise",
-      brand: "Fresh Fragrances",
-      price: 210,
-      image: "/perfumes/product5.jpg",
-    },
+    perfumes[2],
+    perfumes[4],
+    perfumes[5],
+    perfumes[6],
   ];
 
   return (

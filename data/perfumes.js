@@ -43,7 +43,7 @@ export const perfumes = [
     rating: 4.3,
     tags: ["sweet", "feminine", "signature"],
     mood: ["romantic", "fresh"],
-    featured: false,
+    featured: true,
   },
   {
     id: 4,
@@ -103,7 +103,7 @@ export const perfumes = [
     rating: 4.7,
     tags: ["woody", "feminine", "signature"],
     mood: ["romantic", "fresh"],
-    featured: false,
+    featured: true,
   },
   {
     id: 8,
@@ -118,7 +118,7 @@ export const perfumes = [
     rating: 4.5,
     tags: ["musky", "feminine", "signature"],
     mood: ["romantic", "fresh"],
-    featured: false,
+    featured: true,
   },
   {
     id: 9,
@@ -193,7 +193,7 @@ export const perfumes = [
     rating: 4.7,
     tags: ["warm", "evening", "unisex"],
     mood: ["romantic", "mystic"],
-    featured: true,
+    featured: false,
   },
   {
     id: 14,
@@ -208,7 +208,7 @@ export const perfumes = [
     rating: 4.5,
     tags: ["romantic", "floral", "feminine"],
     mood: ["romantic", "fresh"],
-    featured: true,
+    featured: false,
   },
   {
     id: 15,
@@ -238,7 +238,7 @@ export const perfumes = [
     rating: 4.3,
     tags: ["fresh", "citrus", "unisex"],
     mood: ["fresh", "calm"],
-    featured: true,
+    featured: false,
   },
   {
     id: 17,
@@ -283,7 +283,7 @@ export const perfumes = [
     rating: 4.9,
     tags: ["warm", "evening", "unisex"],
     mood: ["romantic", "mystic"],
-    featured: true,
+    featured: false,
   },
   {
     id: 20,

@@ -16,7 +16,7 @@ const FragranceHero = () => {
       {/* Background image with subtle opacity */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-1.jpg"
+          src="/images/heroMain.jpeg"
           alt="Luxury fragrance collection"
           fill
           priority

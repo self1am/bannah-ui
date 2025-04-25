@@ -4,7 +4,7 @@ export const discussionThreads = [
     title: "What's everyone's favorite oud fragrance?",
     author: {
       name: "Sarah_M",
-      avatar: "https://randomuser.me/api/portraits/thumb/men/1.jpg",
+      avatar: "https://randomuser.me/api/portraits/thumb/women/1.jpg",
     },
     excerpt:
       "Recently I've been exploring different oud fragrances and would love recommendations! I enjoy complex, woody scents with a bit of sweetness...",
@@ -52,7 +52,7 @@ export const discussionThreads = [
     title: "Best fragrances for date nights?",
     author: {
       name: "NightOwl",
-      avatar: "https://randomuser.me/api/portraits/thumb/women/10.jpg",
+      avatar: "https://randomuser.me/api/portraits/thumb/men/10.jpg",
     },
     excerpt:
       "I'm looking for something sensual and unique for evening outings. Nothing too overpowering but definitely memorable. Any favorites?",

@@ -1,4 +1,40 @@
 import perfumeSet from "./perfumes_18_to_100.json";
+
+// The six image paths to choose from
+const imagePaths = [
+  '/images/perfume-santal-33.jpg',
+  '/images/perfume-black-orchid.jpg',
+  '/images/perfume-jadore.jpg',
+  '/images/perfume-bleu-de-chanel.jpg',
+  '/images/perfume-aventus.jpg',
+  '/images/perfume-lightblue.jpg'
+];
+
+const realPerfumeNames = [
+  "Santal 33",
+  "Black Orchid",
+  "J'adore",
+  "Bleu de Chanel",
+  "Aventus",
+  "Light Blue"
+];
+
+const perfumeData = perfumeSet.map(perfume => {
+  // Get a random index
+  const randomIndex = Math.floor(Math.random() * realPerfumeNames.length);
+  const realName = realPerfumeNames[randomIndex];
+  
+  return {
+    ...perfume,
+    name: realName,
+    slug: realName.toLowerCase().replace(/['\s]/g, '-'),
+    image: imagePaths[randomIndex]
+  };
+});
+
+const updatedData = perfumeData;
+
+
 export const perfumes = [
   {
     id: 1,
@@ -330,7 +366,7 @@ export const perfumes = [
     mood: ["bold", "calm"],
     featured: false,
   },
-  ...perfumeSet,
+  ...updatedData,
 ];
 export const perfumeBrands = [
   {

@@ -14,6 +14,30 @@ import { discussionThreads } from "@/data/discussions";
 export default function CommunityPage() {
   // Mock discussion threads data
   
+  const discussionThreadAdj = discussionThreads.map(thread => {
+    // Get a random index
+    const imagePaths = [
+      "/images/avatars/avatar1.jpg",
+      "/images/avatars/avatar2.jpg",
+      "/images/avatars/avatar3.jpg",
+      "/images/avatars/avatar4.jpg",
+      "/images/avatars/avatar5.jpg",
+      "/images/avatars/avatar-male.jpg",
+      "/images/avatars/avatar-male-1.jpg",
+      "/images/avatars/avatar-male-2.jpg",
+      "/images/avatars/avatar-male-3.jpg",
+      "/images/avatars/avatar-male-4.jpg",
+    ]
+    const randomIndex = Math.floor(Math.random() * 10);
+    
+    return {
+      ...thread,
+      author:{
+        ...thread.author,
+        avatar: imagePaths[randomIndex],
+      }
+    };
+  });
 
   // Mock trending topics
   const trendingTopics = [
@@ -42,7 +66,7 @@ export default function CommunityPage() {
         <div className="md:col-span-2">
           {/* Discussion threads */}
           <div className="space-y-6">
-            {discussionThreads.map((thread) => (
+            {discussionThreadAdj.map((thread) => (
               <div
                 key={thread.id}
                 className="bg-white border-amber/50 border-[1px] group rounded-lg shadow-sm overflow-hidden"
